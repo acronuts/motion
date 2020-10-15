@@ -18,7 +18,7 @@ export const friendAction = () => async (dispatch, getState) => {
             
         };
         try {
-            const response = await fetch('https://joost.propulsion-home.ch/backend/api/users/', config)
+            const response = await fetch('https://joost.propulsion-learn.ch/backend/api/users/', config)
             // console.log('res', response)
             if (response.status <= 299) {
                 const friends = await response.json()

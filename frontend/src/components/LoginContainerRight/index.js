@@ -23,7 +23,7 @@ const LoginContainerRight = () => {
             }),
             body: JSON.stringify({username, password})
         };
-        fetch('https://joost.propulsion-home.ch/backend/api/auth/token/', config)
+        fetch('https://joost.propulsion-learn.ch/backend/api/auth/token/', config)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

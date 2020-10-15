@@ -17,8 +17,7 @@ const MyPost = ({post}) => {
     return (
         <MyPostStyle>
             <MyPostHeader>
-                {post.user.id === 13 ? <UserPostImg src={myself} alt='me' /> :
-                <UserPostImg src={avatarIcon} alt='me' />}
+                <UserPostImg src={myself} alt='me' />
                 <UserPostInfo>
                     <p>{post.user.first_name} {post.user.last_name}</p>
                     <TimeStamp>{timeSince(timeStamp)}</TimeStamp>

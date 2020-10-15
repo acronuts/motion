@@ -7,8 +7,8 @@ import {useHistory} from 'react-router-dom'
 
 
 const LoginContainerRight = () => {
-    const [email, setEmail] = useState('jpp_idema@hotmail.com')
-    const [password, setPassword] = useState('qwertz12')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
     const [signIn, setSignIn]= useState('Sign In')
     const dispatch = useDispatch();
     const history = useHistory()
@@ -21,7 +21,7 @@ const LoginContainerRight = () => {
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({username, password})
         };
         fetch('https://joost.propulsion-home.ch/backend/api/auth/token/', config)
             .then((res) => res.json())
@@ -45,7 +45,7 @@ const LoginContainerRight = () => {
             <SignInDiv>
                 <SignInType>Sign in</SignInType>
                 <LoginForm>
-                    <InputUsername type='text' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='Email'/>
+                    <InputUsername type='text' value={username} onChange={(event)=>setUsername(event.target.value)} placeholder='Username'/>
                     <InputPassword type='password' value={password} onChange={(event)=>setPassword(event.target.value)} placeholder='Password' />
                     <SubmitBtn type='submit' value={signIn} onClick={handleSubmit}/>
                 </LoginForm>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { MyPostStyle, Menu, MyPostHeader, MyPostContent, MyPostFooter, 
     MyPostLike, MyPostShare, MyPostNumOfLikes, UserPostImg, UserPostInfo, TimeStamp } from './style'
-import myself from '../../../assets/avatars/me2.png'
 import menu from '../../../assets/svgs/menu.svg'
 import heart from '../../../assets/svgs/heart.svg'
 import share from '../../../assets/svgs/share.svg'
@@ -17,8 +16,7 @@ const MyPost = ({post}) => {
     return (
         <MyPostStyle>
             <MyPostHeader>
-                {post.user.id === 13 ? <UserPostImg src={myself} alt='me' /> :
-                <UserPostImg src={avatarIcon} alt='me' />}
+                <UserPostImg src={avatarIcon} alt='me' />
                 <UserPostInfo>
                     <p>{post.user.first_name} {post.user.last_name}</p>
                     <TimeStamp>{timeSince(timeStamp)}</TimeStamp>

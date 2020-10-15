@@ -23,7 +23,7 @@ const LoginContainerRight = () => {
             }),
             body: JSON.stringify({email, password})
         };
-        fetch('https://motion.propulsion-home.ch/backend/api/auth/token/', config)
+        fetch('https://joost.propulsion-home.ch/backend/api/auth/token/', config)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

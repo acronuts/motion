@@ -1,3 +1,5 @@
+import baseUrl from "../../helpers/constants";
+
 export const storePosts = (posts) =>{
     return {
         type: 'STORE_POST',
@@ -18,7 +20,7 @@ export const postAction = () => async (dispatch, getState) => {
             
         };
         try {
-            const response = await fetch('https://joost.propulsion-learn.ch/backend/api/social/posts/', config)
+            const response = await fetch(`${baseUrl}/backend/api/social/posts/`, config)
             // console.log('res', response)
             if (response.status <= 299) {
                 const posts = await response.json()

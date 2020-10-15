@@ -1,3 +1,5 @@
+import baseUrl from "../../helpers/constants";
+
 export const storeFriends = (friends) =>{
     return {
         type: 'STORE_FRIEND',
@@ -18,7 +20,7 @@ export const friendAction = () => async (dispatch, getState) => {
             
         };
         try {
-            const response = await fetch('https://joost.propulsion-learn.ch/backend/api/users/', config)
+            const response = await fetch(`${baseUrl}/backend/api/users/`, config)
             // console.log('res', response)
             if (response.status <= 299) {
                 const friends = await response.json()

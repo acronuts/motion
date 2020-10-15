@@ -1,3 +1,5 @@
+import baseUrl from '../../helpers/constants'
+
 export const userAction = () => async (dispatch, getState) => {
     const {token} = getState().authReducer
 
@@ -9,7 +11,7 @@ export const userAction = () => async (dispatch, getState) => {
         }),
         
     };
-    const response = await fetch('https://joost.propulsion-learn.ch/backend/api/users/me/', config)
+    const response = await fetch(`${baseUrl}/backend/api/users/me/`, config)
         const user = await response.json()
         // console.log(response)
         // console.log('user', user)

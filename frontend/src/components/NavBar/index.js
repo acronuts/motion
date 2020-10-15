@@ -15,7 +15,7 @@ const NavBar = () => {
 
     const logout = () =>{
         window.localStorage.clear();
-        window.location.href = "http://localhost:3000/"
+        window.location.href = "https://joost.propulsion-learn.ch/"
     }
 
     return (

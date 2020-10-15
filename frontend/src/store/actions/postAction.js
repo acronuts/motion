@@ -1,4 +1,4 @@
-import baseUrl from "../../helpers/constants";
+import baseUrl from '../../helpers/constants'
 
 export const storePosts = (posts) =>{
     return {

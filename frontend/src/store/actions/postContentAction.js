@@ -1,5 +1,5 @@
 import {storePosts} from './postAction'
-import baseUrl from "../../helpers/constants";
+import baseUrl from '../../helpers/constants'
 
 export const addPost = (post) =>{
     return {

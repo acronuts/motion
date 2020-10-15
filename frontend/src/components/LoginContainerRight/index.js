@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { authAction, authUser } from '../../store/actions/authAction'
 import { LoginContainerRightStyle, LoginForm, SignInDiv, InputUsername, 
         InputPassword, SubmitBtn, SignInType, SignUpBtn, SignUpDiv } from './style';
-import { useHistory } from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import baseUrl from '../../helpers/constants'
+
 
 const LoginContainerRight = () => {
     const [username, setUsername] = useState('')
@@ -23,7 +24,7 @@ const LoginContainerRight = () => {
             }),
             body: JSON.stringify({username, password})
         };
-        fetch( `${baseUrl}/backend/api/auth/token/`, config)
+        fetch(`${baseUrl}/backend/api/auth/token/`, config)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

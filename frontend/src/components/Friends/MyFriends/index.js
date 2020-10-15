@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {MyFriendsStyle, MyFriendImage, MyFriendName, MyFriendLocation, MyFriendBtns, MyFriendAbout, MyFriendLikes } from './style';
 import { ClearBtn } from '../../../style/Buttons'
 import {LikeBoxItems} from '../../../style/index'

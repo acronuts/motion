@@ -26,25 +26,21 @@ const MyProfileComponent = () => {
                     <MyProfileInfoLeft>
                         <MyProfilePic2 src={me2} alt='me' />
                         <MyProfileName>{user.first_name} {user.last_name}</MyProfileName>
-                        <MyProfileLocation>Zürich, Switserland</MyProfileLocation>
+                        <MyProfileLocation>{user.location}</MyProfileLocation>
                         <ClearBtn>Edit Profile</ClearBtn>
                     </MyProfileInfoLeft>
                     <MyProfileInfoRight>
                         <MyProfileAboutSection>
                             <MyProfileAboutTop>
                                 <About><p>About</p><br/>
-                                <p>Lorem ipsum dolor sit amet, vim ut quas volumus probatus, 
-                                has tantas laudem iracundia et, ad per utamur ceteros apeirian</p>
+                                <p>{user.about_me}</p>
                                 </About>
                                 <ThingsILike>
                                     <p>Things I like</p><br/>
                                     <LikeBoxDiv>
-                                        <LikeBoxItems>Coding</LikeBoxItems>
+                                        <LikeBoxItems>{user.interest_name}</LikeBoxItems>
                                         <LikeBoxItems>Basketball</LikeBoxItems>
                                         <LikeBoxItems>Travel</LikeBoxItems>
-                                        <LikeBoxItems>Food</LikeBoxItems>
-                                        <LikeBoxItems>Swimming</LikeBoxItems>
-                                        <LikeBoxItems>Sleeping</LikeBoxItems>
                                     </LikeBoxDiv>
                                 </ThingsILike>
                             </MyProfileAboutTop>
@@ -55,7 +51,7 @@ const MyProfileComponent = () => {
                                 </ContactDetails>
                                 <ContactDetails>
                                     <div>Phone</div>
-                                    <div>123-456-7890</div>
+                                    <div>{user.phone_num}</div>
                                 </ContactDetails>
                             </MyProfileAboutBottom>
                         </MyProfileAboutSection>

@@ -8,6 +8,13 @@ from users.serializers import UserSerializer
 class PostSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
 
+    likes_counter = serializers.SerializerMethodField()
+
+    def get_likes_counter(self, post):
+        return post.like_post.all().count()
+
     class Meta:
         model = Post
-        fields = ['id', 'title', 'text_content', 'like_post', 'author']
+        fields = '__all__'
+
+# ['id', 'title', 'text_content', 'like_post', 'author', 'post_date']

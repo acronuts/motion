@@ -19,7 +19,7 @@ export const postContentAction = (content) => async (dispatch, getState) => {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${token}`
         }),
-        body: JSON.stringify({content})        
+        body: JSON.stringify({text_content:content})
     };
     try {
         const response = await fetch(`${baseUrl}/backend/api/social/posts/`, config)

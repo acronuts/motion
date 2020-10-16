@@ -7,7 +7,6 @@ from posts.models import Post
 
 sys.path.append('..')
 
-
 User = get_user_model()
 
 
@@ -30,6 +29,9 @@ class UserSerializer(serializers.ModelSerializer):
     def get_amount_of_likes(self, user):
         return user.m2m_likes.count()
 
+    # def get_amount_of_friends(self):
+    #     return 0
+
     def get_amount_of_followers(self, user):
         return User.objects.filter(followees=user).count()
 
@@ -38,5 +40,6 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'location', 'followees', 'fk_interest_user',
-                  'amount_of_posts', 'amount_of_likes', 'amount_of_followers', 'amount_of_following']
+        fields = ['id', 'username', 'first_name', 'last_name', 'location', 'followees', 'fk_interest_user', 'about_me',
+                  'amount_of_posts', 'amount_of_likes', 'amount_of_followers', 'job',
+                  'amount_of_following', 'phone_num', 'email']

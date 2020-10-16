@@ -8,7 +8,7 @@ from posts.serializers import PostSerializer
 
 
 class ListCreatePosts(ListCreateAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-post_date')
     serializer_class = PostSerializer
     permission_classes = []
 

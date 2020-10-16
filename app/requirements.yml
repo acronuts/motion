@@ -9,3 +9,4 @@ dependencies:
       - djangorestframework-simplejwt==4.4.0
       - gunicorn
       - flake8
+      - django-cors-headers

@@ -10,7 +10,7 @@ services:
 
   #these volumes pass the data from your computer to the docker container
   volumes:
-   - frontend:/frontend/build
+   - frontend:/frontend/
    - ./app:/app
    - media-files:/media-files
    - static-files:/static-files

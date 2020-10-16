@@ -9,13 +9,14 @@ import myself from '../../assets/avatars/me2.png';
 // import menu from '../../assets/svgs/menu.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import baseUrl from "../../helpers/constants";
 
 
 const NavBar = () => {
 
     const logout = () =>{
         window.localStorage.clear();
-        window.location.href = "https://joost.propulsion-learn.ch/"
+        window.location.href = `${baseUrl}`
     }
 
     return (

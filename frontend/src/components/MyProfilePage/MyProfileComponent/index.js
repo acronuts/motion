@@ -27,6 +27,8 @@ const MyProfileComponent = () => {
                         <MyProfilePic2 src={me2} alt='me' />
                         <MyProfileName>{user.first_name} {user.last_name}</MyProfileName>
                         <MyProfileLocation>{user.location}</MyProfileLocation>
+                        <div>{user.username}</div>
+                        <div>{user.job}</div>
                         <ClearBtn>Edit Profile</ClearBtn>
                     </MyProfileInfoLeft>
                     <MyProfileInfoRight>
@@ -38,9 +40,10 @@ const MyProfileComponent = () => {
                                 <ThingsILike>
                                     <p>Things I like</p><br/>
                                     <LikeBoxDiv>
-                                        <LikeBoxItems>{user.interest_name}</LikeBoxItems>
-                                        <LikeBoxItems>Basketball</LikeBoxItems>
-                                        <LikeBoxItems>Travel</LikeBoxItems>
+                                        {user['fk_interest_user'] ?
+                                        user.fk_interest_user.map(interest => {
+                                            return(<LikeBoxItems>{interest.interest_name}</LikeBoxItems>)
+                                        }) : null }
                                     </LikeBoxDiv>
                                 </ThingsILike>
                             </MyProfileAboutTop>
@@ -73,7 +76,7 @@ const MyProfileComponent = () => {
                                 <div>Followers</div>
                             </StatBox>
                             <StatBox>
-                                <StatNumber>{user.amount_following}</StatNumber>
+                                <StatNumber>{user.amount_of_following}</StatNumber>
                                 <div>Following</div>
                             </StatBox>
                         </MyProfileStats>

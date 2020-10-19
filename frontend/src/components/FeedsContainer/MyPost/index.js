@@ -1,7 +1,6 @@
 import React from 'react';
-import { MyPostStyle, Menu, MyPostHeader, MyPostContent, MyPostFooter, 
+import { MyPostStyle, Menu, MyPostHeader, MyPostContent, MyPostFooter, MyPostTitle,
     MyPostLike, MyPostShare, MyPostNumOfLikes, UserPostImg, UserPostInfo, TimeStamp } from './style'
-import myself from '../../../assets/avatars/me2.png'
 import menu from '../../../assets/svgs/menu.svg'
 import heart from '../../../assets/svgs/heart.svg'
 import share from '../../../assets/svgs/share.svg'
@@ -16,13 +15,14 @@ const MyPost = ({post}) => {
     return (
         <MyPostStyle>
             <MyPostHeader>
-                <UserPostImg src={myself} alt='me' />
+                <UserPostImg src={avatarIcon} alt='me' />
                 <UserPostInfo>
                     <p>{post.author.first_name} {post.author.last_name}</p>
                     <TimeStamp>{timeSince(timeStamp)}</TimeStamp>
                 </UserPostInfo>
                 <Menu><img src={menu} alt='menu' /></Menu>
             </MyPostHeader>
+            <MyPostTitle>{post.title}</MyPostTitle>
             <MyPostContent>{post.text_content}</MyPostContent>
             <MyPostFooter>
                 <MyPostLike><img src={heart} alt='heart' />Like</MyPostLike>

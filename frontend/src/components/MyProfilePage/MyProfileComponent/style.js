@@ -36,6 +36,8 @@ export const MyProfileInfoRight = styled.div`
     width: 75%;
     height: 100%;
     flex-direction: column;
+    
+    
 `
 
 export const MyProfileAboutSection = styled.div`
@@ -46,6 +48,7 @@ export const MyProfileAboutSection = styled.div`
     flex-direction: column;
     border-radius: 4px;
     border: solid 1px #f2f2f2;
+    
 `
 
 export const MyProfileStats = styled.div`
@@ -83,6 +86,7 @@ export const MyProfileLocation = styled.div`
 export const MyProfileAboutTop = styled.div`
     display: flex;
     height: 70%;
+    overflow: hidden;
 `
 
 export const MyProfileAboutBottom = styled.div`
@@ -93,7 +97,16 @@ export const MyProfileAboutBottom = styled.div`
 export const About = styled.div`
     width: 50%;
     font-size: 16px;
-    overflow: auto;
+    padding-bottom: 5px;
+    /* border: solid 1px purple; */
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0,
+    } 
 `
 
 export const ThingsILike = styled.div`
@@ -106,7 +119,7 @@ export const ThingsILike = styled.div`
     ::-webkit-scrollbar {
         width: 0;
         height: 0,
-    }
+    } 
 `
 
 export const ContactDetails = styled.div`
@@ -116,6 +129,7 @@ export const ContactDetails = styled.div`
     flex-direction: column;
     font-size: 14px;
     line-height: 26px;
+    /* border: solid 1px green; */
 `
 export const StatBox = styled.div`
     display: flex;
@@ -135,11 +149,21 @@ export const LikeBoxItems = styled.div`
     border-radius: 18px;
     text-align: center;
     padding: 8px 16px;
-    margin: 0 8px 16px 0;
+    margin: 0 8px 10px 0;
+    
 `
 
 export const LikeBoxDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
-    
+    /* border: solid 1px red; */
+    /* overflow: auto; */
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0,
+    } 
 `

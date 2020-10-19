@@ -5,23 +5,28 @@ import React, { useEffect } from 'react';
 //     MyProfileAboutTop, MyProfileAboutBottom, About, ThingsILike, ContactDetails, StatBox, StatNumber } from './style';
 // import { ClearBtn } from '../../style/Buttons'
 // import me2 from '../../assets/avatars/me2.png'
-// import {userAction} from '../../store/actions/userAction'
+// import { myPostAction } from '../../store/actions/myPostAction'
 import MyProfileComponent from './MyProfileComponent';
 
 const MyProfilePage = () => {
 
-    // const user = useSelector(state => state.authReducer.user)
+    // const posts = useSelector((state) => state.postReducer.posts)
 
     // const dispatch = useDispatch();
 
-    // useEffect(()=>{
-    //     dispatch(userAction())
+    // useEffect(()=> {
+    //     const fetchPosts = async () =>{
+    //     const data = await dispatch(myPostAction())
+    //     console.log('data', data)   
+    //     }
+    //     fetchPosts() 
     // }, [])
-    
-    // console.log(user)
 
     return(
-        <MyProfileComponent />
+        <div>
+            <MyProfileComponent />
+            {/* <div>{posts.map((post) => post={post} )}</div> */}
+        </div>
     )
 }
 

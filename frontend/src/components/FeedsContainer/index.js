@@ -10,14 +10,13 @@ import SearchBar from '../SearchBar'
 
 const FeedsContainer = () => {
     const posts = useSelector((state) => state.postReducer.posts)
-    // console.log('posts', posts)
+
     const dispatch = useDispatch();
 
     useEffect(()=> {
         const fetchPosts = async () =>{
         const data = await dispatch(postAction())
-        // console.log('data', data)
-    
+        console.log(data)   
         }
         fetchPosts() 
     }, [])

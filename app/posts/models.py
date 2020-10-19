@@ -5,7 +5,7 @@ User = get_user_model()
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=50, blank=True, null=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
     text_content = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(to=User, related_name='fk_post_to_user', on_delete=models.CASCADE)

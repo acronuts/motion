@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const MyPostStyle = styled.div`
     width: 45%;
     min-width: 45%;
-    flex: none;
+    display: inline-block;
+    /* flex: none; */
     background-color: white;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
@@ -21,6 +22,14 @@ export const MyPostHeader = styled.header`
 
 export const Menu = styled.div`
     /* margin: 0 20px; */
+`
+
+export const MyPostTitle = styled.div`
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 0 30px;
 `
 
 export const MyPostContent = styled.div`

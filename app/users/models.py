@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
 
+from friends.models import Friend
+
 
 class User(AbstractUser):
 
@@ -15,3 +17,10 @@ class User(AbstractUser):
 
     def __str__(self):
         return f'{self.username}'
+
+    @property
+    def friends(self):
+        received_requests = Friend.objects.filter(receiver=self, status='accepted')
+        send_requests = Friend.objects.filter(sender=self, status='accepted')
+        friend_list = received_requests + send_requests
+        return friend_list

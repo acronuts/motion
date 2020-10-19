@@ -33,6 +33,7 @@ urlpatterns = [
     path('backend/api/social/posts/', include('posts.urls')),
     path('backend/api/social/followers/', include('users.urls')),
     path('backend/api/social/interests/', include('interests.urls')),
+    path('backend/api/social/friends/', include('friends.urls')),
 ]
 
 if settings.DEBUG:

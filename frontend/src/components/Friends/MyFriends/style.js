@@ -6,6 +6,7 @@ export const MyFriendsStyle = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 360px;
+    height: 487px;
     background-color: white;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.05);
     border-radius: 4px;

@@ -30,6 +30,3 @@ class GetPatchDeleteFriendRequest(RetrieveUpdateDestroyAPIView):
     serializer_class = FriendSerializer
     lookup_url_kwarg = 'friend_request_id'
     permission_classes = [IsAuthenticated & IsSenderReceiverOrReadOnly]
-
-
-

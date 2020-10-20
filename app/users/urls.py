@@ -7,5 +7,5 @@ urlpatterns = [
     path('me/', GetPatchDeleteUsers.as_view()),
     path('toggle-follow/<int:id>/', ToggleFollower.as_view()),
     path('following/', ListUserFollowees.as_view()),
-    path('followers/', ListUserFollowers.as_view())
+    path('followers/', ListUserFollowers.as_view()),
 ]

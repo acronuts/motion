@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rest_framework.generics import GenericAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-
+from rest_framework import filters
 
 from posts.permissions import IsUserOrReadOnly
 from users.serializers import UserSerializer
@@ -12,6 +12,8 @@ User = get_user_model()
 
 
 class GetUsers(ListAPIView):
+    search_fields = ['first_name', 'last_name', 'username']
+    filter_backends = (filters.SearchFilter,)
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
@@ -59,38 +61,3 @@ class ListUserFollowers(ListAPIView):
 
     def get_queryset(self):
         return self.request.user.followers
-
-    # def perform_create(self, serializer):
-    #     serializer.save(author=self.request.user)
-
-    # def get(self, request, *args, **kwargs):
-    #     obj = self.get_object()
-    #     serializer = self.get_serializer(obj)
-    #     return Response(serializer.data)
-    #
-    # def patch(self, request, *args, **kwargs):
-    #     obj = self.get_object()
-    #     serializer = self.get_serializer(obj, data=request.data, partial=True)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save()
-    #     return Response(serializer.data)
-    #
-    # def delete(self, request, *args, **kwargs):
-    #     obj = self.get_object()
-    #     serializer = self.get_serializer(obj)
-    #     obj.delete()
-    #     return Response(serializer.data)
-
-    # class AddDeleteInterestToUser(GenericAPIView):
-    #     queryset = Interest.objects.all()
-    #     serializer_class = InterestSerializer
-    #     lookup_field = 'id'
-    #     permission_classes = []
-    #
-    #     def patch(self, request, *args, **kwargs):
-    #         user = self.get_object()
-    #         for interest_id in request.data['m2m_interests']:
-    #             interest = Interest.objects.get(id=interest_id)
-    #             user.interests.add(interest)
-    #         serializer = self.get_serializer(user)
-    #         return Response(status=201, data=serializer.data)

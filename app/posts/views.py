@@ -1,13 +1,20 @@
+from django.contrib.auth import get_user_model
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import filters
 
 from posts.models import Post
 from posts.permissions import IsUserOrReadOnly
 from posts.serializers import PostSerializer
 
 
+User = get_user_model()
+
+
 class ListCreatePosts(ListCreateAPIView):
+    search_fields = ['text_content', 'title']
+    filter_backends = (filters.SearchFilter,)
     queryset = Post.objects.all().order_by('-post_date')
     serializer_class = PostSerializer
     permission_classes = []
@@ -63,4 +70,14 @@ class ListFolloweesPosts(ListAPIView):
 
     def get_queryset(self):
         post = Post.objects.filter(author__in=self.request.user.followees.all())
+        return post
+
+
+class ListFriendPosts(ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = []
+
+    def get_queryset(self):
+        post = Post.objects.filter(author__in=self.request.user.friends)
         return post

@@ -20,7 +20,11 @@ class User(AbstractUser):
 
     @property
     def friends(self):
+        friend_list = []
         received_requests = Friend.objects.filter(receiver=self, status='accepted')
-        send_requests = Friend.objects.filter(sender=self, status='accepted')
-        friend_list = received_requests + send_requests
+        for friend in received_requests:
+            friend_list.append(friend.sender)
+        sent_requests = Friend.objects.filter(sender=self, status='accepted')
+        for friend in sent_requests:
+            friend_list.append(friend.receiver)
         return friend_list

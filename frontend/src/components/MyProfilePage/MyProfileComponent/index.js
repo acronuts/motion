@@ -10,7 +10,7 @@ import {userAction} from '../../../store/actions/userAction'
 const MyProfileComponent = () => {
 
     const user = useSelector(state => state.authReducer.user)
-
+    console.log(user)
     const dispatch = useDispatch();
 
     useEffect(()=>{

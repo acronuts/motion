@@ -15,7 +15,8 @@ const MyPost = ({post}) => {
     return (
         <MyPostStyle>
             <MyPostHeader>
-                <UserPostImg src={avatarIcon} alt='me' />
+                {post.author.avatar ? <UserPostImg src={post.author.avatar} alt='profile_pic' /> :
+                <UserPostImg src={avatarIcon} alt='profile_pic' /> }
                 <UserPostInfo>
                     <p>{post.author.first_name} {post.author.last_name}</p>
                     <TimeStamp>{timeSince(timeStamp)}</TimeStamp>

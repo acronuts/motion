@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import codingbg from '../../../assets/images/feedPics/codingbg3.jpg'
 
 export const MyProfilePageStyle = styled.div`
-    background-image: url(${codingbg});
+    background-image: url(${(props)=>props.background});
     width: 100vw;
-    height: 240px;
+    height: 300px;
     background-size: 100%;
     background-repeat: no-repeat;
 `
@@ -63,13 +63,13 @@ export const MyProfileStats = styled.div`
 `
 
 export const MyProfilePic2 = styled.img`
-    width: 40%;
-    height: 25%;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 12px;
     :hover {
-        width: 80%;
-        height: 50%;
+        width: 75%;
+        height: 75%;
         
     }
 `

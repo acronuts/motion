@@ -5,6 +5,10 @@ from django.conf import settings
 from friends.models import Friend
 
 
+def user_directory_path(instance, filename):
+    return f'{instance.username}/{filename}'
+
+
 class User(AbstractUser):
 
     location = models.CharField(max_length=20, blank=True, default="")
@@ -14,6 +18,8 @@ class User(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
     followees = models.ManyToManyField(to=settings.AUTH_USER_MODEL, related_name='followers', blank=True)
     email = models.EmailField(unique=True)
+    avatar = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
+    banner = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
 
     def __str__(self):
         return f'{self.username}'

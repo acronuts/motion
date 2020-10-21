@@ -14,7 +14,7 @@ User = get_user_model()
 class GetUsers(ListAPIView):
     search_fields = ['first_name', 'last_name', 'username']
     filter_backends = (filters.SearchFilter,)
-    queryset = User.objects.all()
+    queryset = User.objects.filter(is_active=True)
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 

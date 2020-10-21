@@ -1,6 +1,6 @@
 const initialState = {
     token: null,
-    user: null,
+    user: [],
 }
 
 export const authReducer = (state = initialState, action) => {

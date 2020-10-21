@@ -9,8 +9,9 @@ const MyFriends = ({friend}) => {
     console.log('friend', friend)
     return (
         
+        
         <MyFriendsStyle>
-             <>
+            {friend.is_active ? <>
             {friend.avatar ?  <MyFriendImage src={friend.avatar} alt='profile_pic' /> :
             <MyFriendImage src={avatarIcon} alt='profile_pic' /> }
             <MyFriendName>{friend.first_name} {friend.last_name}</MyFriendName>
@@ -27,7 +28,9 @@ const MyFriends = ({friend}) => {
                 }) : null }
             </MyFriendLikes>
              </>
+            : 'not yet validated' }
         </MyFriendsStyle>
+        
     )
 }
 

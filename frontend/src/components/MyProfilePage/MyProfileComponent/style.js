@@ -36,8 +36,6 @@ export const MyProfileInfoRight = styled.div`
     width: 75%;
     height: 100%;
     flex-direction: column;
-    
-    
 `
 
 export const MyProfileAboutSection = styled.div`

@@ -18,7 +18,7 @@ const MyProfileComponent = () => {
         dispatch(userAction())
     }, [])
     
-    console.log('friend', user.friends)
+    console.log('friends', user.username)
 
     return(
         <>

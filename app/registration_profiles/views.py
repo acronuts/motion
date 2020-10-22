@@ -24,13 +24,15 @@ class Registration(GenericAPIView):
 
         send_mail(
             'Your Motion login code',
-            f'Hello {new_user.username}, \n Please use the following code to validate your email address: {registration.code}',
+            f'Hello {new_user.username}, \nPlease use the following code to validate your email address and update your account: {registration.code}.\n'
+            f'Thank you for joining the world of Motion',
             'joost.motion@gmail.com',
             [f'{new_user.email}'],
             fail_silently=False,
         )
 
         return Response(status=200)
+
 
 class Validation(GenericAPIView):
     permission_classes = []

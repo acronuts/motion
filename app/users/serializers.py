@@ -43,4 +43,4 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'location', 'followees', 'fk_interest_user', 'about_me',
                   'amount_of_posts', 'amount_of_likes', 'amount_of_followers', 'job', 'amount_of_friends', 'is_active',
-                  'amount_of_following', 'phone_num', 'email', 'avatar', 'banner']
+                  'amount_of_following', 'phone_num', 'avatar', 'banner', 'email']

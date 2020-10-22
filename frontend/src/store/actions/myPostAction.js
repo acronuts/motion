@@ -9,6 +9,7 @@ export const storePosts = (posts) =>{
 
 export const myPostAction = () => async (dispatch, getState) => {
     const {token} = getState().authReducer
+    const id = getState().authReducer.user.id
 
     const config = {
         method: 'GET',
@@ -19,7 +20,7 @@ export const myPostAction = () => async (dispatch, getState) => {
         
     };
     try {
-        const response = await fetch(`${baseUrl}/backend/api/social/posts/user/<int:id>`, config)
+        const response = await fetch(`${baseUrl}/backend/api/social/posts/user/${id}`, config)
         // console.log('res', response)
         if (response.status <= 299) {
             const posts = await response.json()

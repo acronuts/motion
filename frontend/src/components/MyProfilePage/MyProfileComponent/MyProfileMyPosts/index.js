@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myPostAction } from '../../../../store/actions/myPostAction'
-import MyPost from '../../../FeedsContainer/'
+import MyOwnPosts from '../MyProfileMyPosts/MyOwnPosts'
 
 
 
@@ -20,7 +20,7 @@ const MyProfileMyPost = () => {
 
     return (
         <>
-            {posts.map((post) => <MyPost post={post} key={post.id}/>)}
+            {posts.map((post) => <MyOwnPosts post={post} key={post.id}/>)}
         </>
     )
 }

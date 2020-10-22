@@ -1,14 +1,14 @@
 import React from 'react';
-import { MyPostStyle, Menu, MyPostHeader, MyPostContent, MyPostImageCont, MyPostImage, MyPostFooter, MyPostTitle,
+import { MyPostStyle, Menu, MyPostHeader, MyPostContent, MyPostImage, MyPostImageCont, MyPostFooter, MyPostTitle,
     MyPostLike, MyPostShare, MyPostNumOfLikes, UserPostImg, UserPostInfo, TimeStamp } from './style'
-import menu from '../../../assets/svgs/menu.svg'
-import heart from '../../../assets/svgs/heart.svg'
-import share from '../../../assets/svgs/share.svg'
+import menu from '../../../../../assets/svgs/menu.svg'
+import heart from '../../../../../assets/svgs/heart.svg'
+import share from '../../../../../assets/svgs/share.svg'
 import { timeSince } from './time'
-import avatarIcon from '../../../assets/svgs/avatar.svg';
+import avatarIcon from '../../../../../assets/svgs/avatar.svg';
 
 
-const MyPost = ({post}) => {
+const MyOwnPosts = ({post}) => {
 
     const timeStamp = new Date(post.post_date)
 
@@ -40,4 +40,4 @@ const MyPost = ({post}) => {
     )
 };
 
-export default MyPost;
+export default MyOwnPosts;

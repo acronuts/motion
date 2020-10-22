@@ -4,12 +4,11 @@ export const MyPostStyle = styled.div`
     width: 45%;
     min-width: 45%;
     display: inline-block;
-    flex: none;
+    /* flex: none; */
     background-color: white;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     overflow: hidden;
-    height: auto;
 `
 
 export const MyPostHeader = styled.header`
@@ -49,7 +48,6 @@ export const MyPostContent = styled.div`
         height: 0,
     }
 `
-
 export const MyPostImageCont = styled.div`
     display: flex;
     justify-content: space-between;

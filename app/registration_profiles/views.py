@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
+from django.core.mail import send_mail
 
 from .models import RegistrationProfile
 
@@ -20,8 +21,16 @@ class Registration(GenericAPIView):
         new_user.save()
         registration = RegistrationProfile(user=new_user)
         registration.save()
-        return Response(status=200)
 
+        send_mail(
+            'Your Motion login code',
+            f'Hello {new_user.username}, \n Please use the following code to validate your email address: {registration.code}',
+            'joost.motion@gmail.com',
+            [f'{new_user.email}'],
+            fail_silently=False,
+        )
+
+        return Response(status=200)
 
 class Validation(GenericAPIView):
     permission_classes = []
@@ -42,4 +51,4 @@ class Validation(GenericAPIView):
             check_validation.save()
             return Response(self.get_serializer(check_validation.user).data)
         except ObjectDoesNotExist:
-            return Response(status=404, data=f'{code} is not valid with {email}')
+            return Response(status=404, data=f'This {code} is not valid with {email}')

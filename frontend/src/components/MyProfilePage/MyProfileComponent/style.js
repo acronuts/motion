@@ -98,7 +98,6 @@ export const About = styled.div`
     width: 50%;
     font-size: 16px;
     padding-bottom: 5px;
-    /* border: solid 1px purple; */
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none;
@@ -129,7 +128,6 @@ export const ContactDetails = styled.div`
     flex-direction: column;
     font-size: 14px;
     line-height: 26px;
-    /* border: solid 1px green; */
 `
 export const StatBox = styled.div`
     display: flex;
@@ -156,8 +154,6 @@ export const LikeBoxItems = styled.div`
 export const LikeBoxDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
-    /* border: solid 1px red; */
-    /* overflow: auto; */
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none;

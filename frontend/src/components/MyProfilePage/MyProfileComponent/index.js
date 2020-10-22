@@ -5,8 +5,8 @@ import { MyProfilePageStyle, MyProfileContainerStyle, MyProfileInfoLeft, MyProfi
     MyProfileAboutTop, MyProfileAboutBottom, About, ThingsILike, ContactDetails, StatBox, StatNumber, LikeBoxItems, LikeBoxDiv } from './style';
 import { ClearBtn } from '../../../style/Buttons'
 import avatarIcon from '../../../assets/svgs/avatar.svg'
-import me2 from '../../../assets/avatars/me2.png'
 import {userAction} from '../../../store/actions/userAction'
+import { Link } from 'react-router-dom';
 
 const MyProfileComponent = () => {
 
@@ -18,7 +18,7 @@ const MyProfileComponent = () => {
         dispatch(userAction())
     }, [])
     
-    // console.log(user)
+    console.log('friend', user.friends)
 
     return(
         <>
@@ -59,18 +59,18 @@ const MyProfileComponent = () => {
                         </MyProfileAboutBottom>
                     </MyProfileAboutSection>
                     <MyProfileStats>
-                        <StatBox>
+                        <Link to= '/profile/myposts'><StatBox>
                             <StatNumber>{user.amount_of_posts}</StatNumber> 
                             <div>Posts</div>
-                        </StatBox>
+                        </StatBox></Link>
                         <StatBox>
                             <StatNumber>{user.amount_of_likes}</StatNumber>
                             <div>Likes</div>
                         </StatBox>
-                        <StatBox>
+                        <Link to= '/profile/myfriends'><StatBox>
                             <StatNumber>{user.amount_of_friends}</StatNumber>
                             <div>Friends</div>
-                        </StatBox>
+                        </StatBox></Link>
                         <StatBox>
                             <StatNumber>{user.amount_of_followers}</StatNumber>
                             <div>Followers</div>

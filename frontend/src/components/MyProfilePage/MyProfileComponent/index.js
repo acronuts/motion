@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { MyProfilePageStyle, MyProfileContainerStyle, MyProfileInfoLeft, MyProfileInfoRight, 
+import { MyProfilePageStyle, MyProfileContainerStyle, MyProfileInfoLeft, MyProfileInfoRight, NavLink,
     MyProfilePic2, MyProfileName, MyProfileLocation, MyProfileAboutSection, MyProfileStats,
     MyProfileAboutTop, MyProfileAboutBottom, About, ThingsILike, ContactDetails, StatBox, StatNumber, LikeBoxItems, LikeBoxDiv } from './style';
 import { ClearBtn } from '../../../style/Buttons'
@@ -59,26 +59,26 @@ const MyProfileComponent = () => {
                         </MyProfileAboutBottom>
                     </MyProfileAboutSection>
                     <MyProfileStats>
-                        <Link to= '/profile/myposts'><StatBox>
+                        <NavLink to= '/profile/myposts'><StatBox>
                             <StatNumber>{user.amount_of_posts}</StatNumber> 
                             <div>Posts</div>
-                        </StatBox></Link>
+                        </StatBox></NavLink>
                         <StatBox>
                             <StatNumber>{user.amount_of_likes}</StatNumber>
                             <div>Likes</div>
                         </StatBox>
-                        <Link to= '/profile/myfriends'><StatBox>
+                        <NavLink to= '/profile/myfriends'><StatBox>
                             <StatNumber>{user.amount_of_friends}</StatNumber>
                             <div>Friends</div>
-                        </StatBox></Link>
-                        <StatBox>
+                        </StatBox></NavLink>
+                        <NavLink to='/profile/followers'><StatBox>
                             <StatNumber>{user.amount_of_followers}</StatNumber>
                             <div>Followers</div>
-                        </StatBox>
-                        <StatBox>
+                        </StatBox></NavLink>
+                        <NavLink to='/profile/following'><StatBox>
                             <StatNumber>{user.amount_of_following}</StatNumber>
                             <div>Following</div>
-                        </StatBox>
+                        </StatBox></NavLink>
                     </MyProfileStats>
                 </MyProfileInfoRight>
             </MyProfileContainerStyle>
@@ -88,3 +88,4 @@ const MyProfileComponent = () => {
 }
 
 export default MyProfileComponent
+

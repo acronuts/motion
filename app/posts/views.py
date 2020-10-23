@@ -61,7 +61,7 @@ class ListUserPosts(ListAPIView):
     permission_classes = []
 
     def get_queryset(self):
-        return Post.objects.filter(author=self.kwargs['id'])
+        return Post.objects.filter(author=self.kwargs['id']).order_by('-post_date')
 
 
 class ListFolloweesPosts(ListAPIView):

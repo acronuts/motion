@@ -5,6 +5,7 @@ import MyProfileMyPosts from './MyProfileComponent/MyProfileMyPosts'
 import MyProfileFriends from './MyProfileComponent/MyProfileFriends'
 import MyProfileFollowers from './MyProfileComponent/MyProfileFollowers'
 import MyProfileFollowing from './MyProfileComponent/MyProfileFollowing'
+import { Testdiv } from './style'
 
 const MyProfilePage = () => {
 
@@ -13,12 +14,14 @@ const MyProfilePage = () => {
     return(
         <Router>
             <MyProfileComponent />
-                <Switch>
-                    <Route exact path='/profile/myposts' component= { MyProfileMyPosts } />
-                    <Route exact path='/profile/myfriends' component= { MyProfileFriends } />
-                    <Route exact path='/profile/followers' component= { MyProfileFollowers } />
-                    <Route exact path='/profile/following' component= { MyProfileFollowing } />
-                </Switch>
+                <Testdiv>
+                    <Switch>
+                        <Route exact path='/profile/myposts' component= { MyProfileMyPosts } />
+                        <Route exact path='/profile/myfriends' component= { MyProfileFriends } />
+                        <Route exact path='/profile/followers' component= { MyProfileFollowers } />
+                        <Route exact path='/profile/following' component= { MyProfileFollowing } />
+                    </Switch>
+                </Testdiv>
         </Router>
     )
 }

@@ -38,7 +38,8 @@ export const MyPostContent = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     font-size: 16px;
-    padding: 0 30px 0 30px;
+    margin-bottom: 10px;
+    /* padding: 0 30px 0 30px; */
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none;

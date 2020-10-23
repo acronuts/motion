@@ -1,14 +1,14 @@
 import baseUrl from '../../helpers/constants'
 
-export const storePosts = (posts) =>{
+export const storeFollowers = (followers) =>{
     return {
-        type: 'STORE_POST',
-        payload: posts,
+        type: 'STORE_FOLLOWERS',
+        payload: followers,
     }
 }
 
 
-export const postFollowAction = () => async (dispatch, getState) => {
+export const myFollowersAction = () => async (dispatch, getState) => {
         const {token} = getState().authReducer
 
         const config = {
@@ -20,12 +20,12 @@ export const postFollowAction = () => async (dispatch, getState) => {
             
         };
         try {
-            const response = await fetch(`${baseUrl}/backend/api/social/posts/following/`, config)
+            const response = await fetch(`${baseUrl}/backend/api/social/followers/followers/`, config)
             // console.log('res', response)
             if (response.status <= 299) {
-                const posts = await response.json()
-                dispatch(storePosts(posts))
-                return posts           
+                const followers = await response.json()
+                dispatch(storeFollowers(followers))
+                return followers           
 
             }
         } catch (error) {

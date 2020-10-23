@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import codingbg from '../../../assets/images/feedPics/codingbg3.jpg'
+import {Link} from 'react-router-dom'
 
 export const MyProfilePageStyle = styled.div`
     background-image: url(${(props)=>props.background});
@@ -160,4 +160,9 @@ export const LikeBoxDiv = styled.div`
         width: 0;
         height: 0,
     } 
+`
+
+export const NavLink = styled(Link)`
+    text-decoration: none;
+    height: 100%;
 `

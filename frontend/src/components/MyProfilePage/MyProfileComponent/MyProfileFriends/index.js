@@ -5,16 +5,16 @@ import MyFriends from '../../../Friends'
 
 
 const MyProfileFriends = () => {
-    const friends = useSelector((state) => state.friendReducer.friends)
+    const friends = useSelector((state) => state.authReducer.user.friends)
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        const fetchFriends = async() => {
-        const data = await dispatch(myFriendsAction())
-        }
-        fetchFriends()
-    }, [])
+    // useEffect(() => {
+    //     const fetchFriends = async() => {
+    //     const data = await dispatch(myFriendsAction())
+    //     }
+    //     fetchFriends()
+    // }, [])
 
     return (
         <div>{friends.map((friend) => <MyFriends friend={friend} key={friend.id}/>)}</div>

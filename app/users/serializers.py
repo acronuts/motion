@@ -16,8 +16,15 @@ class UserInterestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class UserFriendSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username']
+
+
 class UserSerializer(serializers.ModelSerializer):
     fk_interest_user = UserInterestSerializer(many=True)
+    friends = serializers.SerializerMethodField()
     amount_of_posts = serializers.SerializerMethodField()
     amount_of_likes = serializers.SerializerMethodField()
     amount_of_followers = serializers.SerializerMethodField()
@@ -39,8 +46,11 @@ class UserSerializer(serializers.ModelSerializer):
     def get_amount_of_following(self, user):
         return user.followees.count()
 
+    def get_friends(self, user):
+        return UserFriendSerializer(self.context['request'].user.friends, many=True).data
+
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'location', 'followees', 'fk_interest_user', 'about_me',
                   'amount_of_posts', 'amount_of_likes', 'amount_of_followers', 'job', 'amount_of_friends', 'is_active',
-                  'amount_of_following', 'phone_num', 'avatar', 'banner', 'email']
+                  'amount_of_following', 'phone_num', 'avatar', 'banner', 'email', 'friends']

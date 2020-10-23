@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { myFriendsAction } from "../../../../store/actions/myFriendsAction";
-import MyFriends from '../../../Friends'
+import MyOwnFriends from './MyOwnFriends'
 
 
 const MyProfileFriends = () => {
@@ -17,7 +17,9 @@ const MyProfileFriends = () => {
     // }, [])
 
     return (
-        <div>{friends.map((friend) => <MyFriends friend={friend} key={friend.id}/>)}</div>
+        <>
+        {friends.map((friend) => <MyOwnFriends friend={friend} key={friend.id}/>)}
+        </>
     )
 }
 

@@ -19,7 +19,7 @@ class UserInterestSerializer(serializers.ModelSerializer):
 class UserFriendSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username']
+        fields = ['id', 'first_name', 'last_name', 'location', 'fk_interest_user', 'about_me', 'avatar']
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -53,4 +53,4 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'location', 'followees', 'fk_interest_user', 'about_me',
                   'amount_of_posts', 'amount_of_likes', 'amount_of_followers', 'job', 'amount_of_friends', 'is_active',
-                  'amount_of_following', 'phone_num', 'avatar', 'banner', 'email', 'friends']
+                  'amount_of_following', 'phone_num', 'avatar', 'banner', 'email', 'friends', 'followers']

@@ -6,7 +6,7 @@ import avatarIcon from '../../../../../assets/svgs/avatar.svg';
 
 
 const MyFollowees = ({followee}) => {
-    console.log('followee', followee)
+    // console.log('followee', followee)
     return (
         
         <MyFriendsStyle>

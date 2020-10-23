@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { myPostAction } from '../../../../store/actions/myPostAction'
+import { postLikedAction } from '../../../../store/actions/postLikedAction'
 import MyOwnPosts from '../MyProfileMyPosts/MyOwnPosts'
 
 
 
-const MyProfileMyPost = () => {
+const MyProfileLikes = () => {
     const posts = useSelector((state) => state.postReducer.posts)
 
     const dispatch = useDispatch();
 
     useEffect(()=> {
         const fetchPosts = async () =>{
-        const data = await dispatch(myPostAction())
+        const data = await dispatch(postLikedAction())
         // console.log('data', data)   
         }
         fetchPosts() 
@@ -25,4 +25,4 @@ const MyProfileMyPost = () => {
     )
 }
 
-export default MyProfileMyPost
+export default MyProfileLikes

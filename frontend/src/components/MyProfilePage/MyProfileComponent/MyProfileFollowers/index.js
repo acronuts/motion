@@ -14,11 +14,11 @@ const MyProfileFollowers = () => {
     useEffect(()=> {
         const fetchFollowers = async () =>{
         const followers = await dispatch(myFollowersAction())
-        console.log('followers', followers)   
+        // console.log('followers', followers)   
         }
         fetchFollowers() 
     }, [])
-    console.log('followers', followers)
+    // console.log('followers', followers)
     return (
         <FriendCompStyle>
         {followers.map((follower) => <MyFollowers follower={follower} key={follower.id}/>)}

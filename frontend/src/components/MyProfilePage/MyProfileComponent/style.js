@@ -55,7 +55,7 @@ export const MyProfileStats = styled.div`
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
     border-radius: 4px;
     border: solid 1px #f2f2f2;
 `
@@ -133,6 +133,7 @@ export const StatBox = styled.div`
     width: 80px;
     height: 80px;
     justify-content: space-evenly;
+    
 `
 
 export const StatNumber = styled.div`
@@ -146,7 +147,6 @@ export const LikeBoxItems = styled.div`
     text-align: center;
     padding: 8px 16px;
     margin: 0 8px 10px 0;
-    
 `
 
 export const LikeBoxDiv = styled.div`
@@ -165,4 +165,10 @@ export const LikeBoxDiv = styled.div`
 export const NavLink = styled(Link)`
     text-decoration: none;
     height: 100%;
+    display: flex;
+    color: black;
+    align-items: center;
+    :hover {
+        border-bottom: solid 1.5px black;
+    }
 `

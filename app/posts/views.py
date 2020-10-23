@@ -51,7 +51,7 @@ class ListLikedPosts(ListAPIView):
     serializer_class = PostSerializer
 
     def get_queryset(self):
-        return self.request.user.m2m_likes
+        return self.request.user.m2m_likes.order_by('-post_date')
 
 
 class ListUserPosts(ListAPIView):

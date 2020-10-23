@@ -18,7 +18,7 @@ import baseUrl from "../../helpers/constants";
 const NavBar = () => {
 
     const user = useSelector((state) => state.authReducer.user)
-    console.log('user', user)
+    // console.log('user', user)
     const dispatch = useDispatch();
 
     useEffect(()=>{

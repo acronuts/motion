@@ -11,14 +11,14 @@ import { Link } from 'react-router-dom';
 const MyProfileComponent = () => {
 
     const user = useSelector(state => state.authReducer.user)
-    console.log(user)
+    // console.log(user)
     const dispatch = useDispatch();
 
     useEffect(()=>{
         dispatch(userAction())
     }, [])
     
-    console.log('friends', user.username)
+    // console.log('friends', user.username)
 
     return(
         <>
@@ -49,35 +49,35 @@ const MyProfileComponent = () => {
                         </MyProfileAboutTop>
                         <MyProfileAboutBottom>
                             <ContactDetails>
-                                <div>Email</div>
-                                <div>{user.email}</div>
+                                <span>Email</span>
+                                <span>{user.email}</span>
                             </ContactDetails>
                             <ContactDetails>
-                                <div>Phone</div>
-                                <div>{user.phone_num}</div>
+                                <span>Phone</span>
+                                <span>{user.phone_num}</span>
                             </ContactDetails>
                         </MyProfileAboutBottom>
                     </MyProfileAboutSection>
                     <MyProfileStats>
                         <NavLink to= '/profile/myposts'><StatBox>
                             <StatNumber>{user.amount_of_posts}</StatNumber> 
-                            <div>Posts</div>
+                            <span>Posts</span>
                         </StatBox></NavLink>
-                        <StatBox>
+                        <NavLink to='/profile/mylikes'><StatBox>
                             <StatNumber>{user.amount_of_likes}</StatNumber>
-                            <div>Likes</div>
-                        </StatBox>
+                            <span>Likes</span>
+                        </StatBox></NavLink>
                         <NavLink to= '/profile/myfriends'><StatBox>
                             <StatNumber>{user.amount_of_friends}</StatNumber>
-                            <div>Friends</div>
+                            <span>Friends</span>
                         </StatBox></NavLink>
                         <NavLink to='/profile/followers'><StatBox>
                             <StatNumber>{user.amount_of_followers}</StatNumber>
-                            <div>Followers</div>
+                            <span>Followers</span>
                         </StatBox></NavLink>
                         <NavLink to='/profile/following'><StatBox>
                             <StatNumber>{user.amount_of_following}</StatNumber>
-                            <div>Following</div>
+                            <span>Following</span>
                         </StatBox></NavLink>
                     </MyProfileStats>
                 </MyProfileInfoRight>

@@ -16,7 +16,7 @@ const FeedsContainer = () => {
     useEffect(()=> {
         const fetchPosts = async () =>{
         const data = await dispatch(postAction())
-        console.log(data)   
+        // console.log(data)   
         }
         fetchPosts() 
     }, [])

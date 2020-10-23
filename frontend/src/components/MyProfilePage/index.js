@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import MyProfileComponent from './MyProfileComponent';
 import MyProfileMyPosts from './MyProfileComponent/MyProfileMyPosts'
+import MyProfileLikes from './MyProfileComponent/MyProfileLikes'
 import MyProfileFriends from './MyProfileComponent/MyProfileFriends'
 import MyProfileFollowers from './MyProfileComponent/MyProfileFollowers'
 import MyProfileFollowing from './MyProfileComponent/MyProfileFollowing'
@@ -17,6 +18,7 @@ const MyProfilePage = () => {
                 <Testdiv>
                     <Switch>
                         <Route exact path='/profile/myposts' component= { MyProfileMyPosts } />
+                        <Route exact path='/profile/mylikes' component= { MyProfileLikes } />
                         <Route exact path='/profile/myfriends' component= { MyProfileFriends } />
                         <Route exact path='/profile/followers' component= { MyProfileFollowers } />
                         <Route exact path='/profile/following' component= { MyProfileFollowing } />

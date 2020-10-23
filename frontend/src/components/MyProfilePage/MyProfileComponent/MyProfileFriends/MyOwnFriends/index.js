@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import {MyFriendsStyle, MyFriendImage, MyFriendName, MyFriendLocation, MyFriendBtns, MyFriendAbout, MyFriendLikes } from './style';
-import { ClearBtn } from '../../../style/Buttons'
-import {LikeBoxItems} from '../../../style/index'
-import avatarIcon from '../../../assets/svgs/avatar.svg';
+import React from 'react';
+import { MyFriendsStyle, MyFriendImage, MyFriendName, MyFriendLocation, MyFriendBtns, MyFriendAbout, MyFriendLikes } from './style';
+import { ClearBtn } from '../../../../../style/Buttons'
+import {LikeBoxItems} from '../../../../../style/index'
+import avatarIcon from '../../../../../assets/svgs/avatar.svg';
 
 
-const MyFriends = ({friend}) => {
+const MyOwnFriends = ({friend}) => {
     // console.log('friend', friend)
     return (
         
-        
         <MyFriendsStyle>
-            {friend.is_active ? <>
             {friend.avatar ?  <MyFriendImage src={friend.avatar} alt='profile_pic' /> :
             <MyFriendImage src={avatarIcon} alt='profile_pic' /> }
             <MyFriendName>{friend.first_name} {friend.last_name}</MyFriendName>
@@ -27,13 +25,9 @@ const MyFriends = ({friend}) => {
                     return(<LikeBoxItems>{interest.interest_name}</LikeBoxItems>)
                 }) : null }
             </MyFriendLikes>
-             </>
-            : 'not yet validated' }
         </MyFriendsStyle>
         
     )
 }
 
-export default MyFriends;
-
-// {if (avatar) {{src={friend.avatar}}} else src={avatar}}
+export default MyOwnFriends;
